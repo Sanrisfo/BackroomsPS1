@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LamparaTecho
       objectReference: {fileID: 0}
+    - target: {fileID: 3178232169629056811, guid: d8c1841e81737c44b9298b6f547bb4a3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3242880420683926320, guid: d8c1841e81737c44b9298b6f547bb4a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.6036577
@@ -157,7 +161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6560397635848824507, guid: 99d4dc7075a36c245812d4318e2ca535, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560397635848824507, guid: 99d4dc7075a36c245812d4318e2ca535, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3012861763245256319, guid: 99d4dc7075a36c245812d4318e2ca535, type: 3}
