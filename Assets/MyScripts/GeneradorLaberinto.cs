@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class GeneradorLaberinto : MonoBehaviour
 {
+    [Header("Punto de Inicio")]
+    [Tooltip("Si está activo, usará las coordenadas de abajo. Si está desactivado, usará la posición de este GameObject en la escena.")]
+    public bool usarCoordenadasPersonalizadas = false;
+    public Vector3 puntoInicio = Vector3.zero;
+
     [Header("Dimensiones de la Cuadrícula")]
     public int anchoX = 10; //cantidad de cuartos
     public int largoZ = 10;
@@ -34,11 +39,19 @@ public class GeneradorLaberinto : MonoBehaviour
             GameObject nuevoContenedor = new GameObject("LaberintoGen");
             contenedorPadre = nuevoContenedor.transform;
         }
+
+        // Determinar el origen desde donde comienza el laberinto
+        Vector3 origen = usarCoordenadasPersonalizadas ? puntoInicio : transform.position;
+
         for (int x=0; x<anchoX; x++){
             for (int z=0; z<largoZ; z++){
                 
                 //Definir la posicion donde se instanciará el prefab en el entorno 3D
-                Vector3 posicion = new Vector3(x*tamanoModulo, 0f, z*tamanoModulo);
+                Vector3 posicion = new Vector3(
+                    origen.x + (x * tamanoModulo),
+                    origen.y,
+                    origen.z + (z * tamanoModulo)
+                );
 
                 //Elegir un prefab aleatorio
                 int indiceRandom = Random.Range(0, prefabsHabitaciones.Length);
